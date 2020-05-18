@@ -1,0 +1,212 @@
+/* soft reset do css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+ background-image: url('../img/fundo.jpg');
+ background-size: auto 100vh;
+ font-family: Arial;
+ height: 100vh;
+ font-size: 12px;
+}
+
+/*Se a tela tiver pelo menos 400px vai carregar estes estilos*/
+@media (min-width: 400px){
+    body{
+        font-size: 14px;
+    }
+}
+
+/* breakpoint */
+@media (min-width: 600px){
+    body{
+        font-size: 18px;
+    }
+}
+
+header{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.menu{
+    background-color: white;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    z-index: 1;
+}
+
+.menu a{
+    display: block;
+    padding: 10px 20px;
+    transition: background-color 1s, color 1s;
+}
+
+.menu a:active,
+.menu a:hover{
+    background-color: teal;
+    color: white;
+}
+
+
+.menu ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu li{
+    list-style: none;
+}
+
+.titulo{
+    transform: scale(0.2) translateY(50vh);
+    opacity: 0;
+    
+    animation: .5s linear 2s animacaoTitulo forwards;
+}
+
+@keyframes animacaoTitulo{
+    0%{
+        transform: scale(0.2) translateY(50vh);
+        opacity: 0;
+    }
+    100%{
+         transform: scale(1) translateY(0);
+         opacity: 1;
+    }
+}
+
+.site-subtitle,
+.site-title{
+    text-align: center;
+    color: whitesmoke;
+}
+
+.site-title{
+    font-size: 4em;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+
+.site-subtitle{
+    font-style: italic;
+    font-family: 'Press Start 2P', cursive;
+    line-height: 1.6cm;
+}
+
+.sobre,
+.contato,
+.portfolio{
+    padding: 2em;
+    min-height: 100vh;
+}
+
+@media(min-width: 1200px){
+    .container{
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+ }
+}
+
+.sobre h2,
+.contato h2,
+.portfolio h2{
+    font-family: 'Press Start 2P', cursive;
+    color: whitesmoke;
+    margin-bottom: 1.5em;
+    font-size: 2em;
+}
+
+.sobre .avatar img{
+    border-radius: 30%;
+    max-width:7000px;
+    max-height:400px;
+    width: auto;
+    height: auto;
+
+    clip-path: polygon();
+}
+
+.sobre .avatar{
+    float: right;
+    margin-left: 2em;
+}
+
+.sobre p{
+    color: white;
+    margin-bottom: 1.4em;
+    text-indent: 1.4em;
+    text-align: justify;
+}
+
+.sobre a{
+    color: cyan;
+}
+
+.portfolio .grid{
+    display: grid;
+    gap: 2em;
+}
+
+@media (min-width: 560px){
+    .portfolio .grid{
+        grid-template-columns: 240px 240px;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 880px){
+    .portfolio .grid{
+        grid-template-columns: repeat(3, 240px);
+        align-content: center;
+        justify-content: center;
+        height: calc(100vh - 48px - 8em);
+    }
+}
+
+.portfolio figure{
+    text-align: center;
+}
+
+.img-portfolio{
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+    object-position: left bottom;
+    transition: transform 500ms;
+}
+
+.img-portfolio:hover{
+    transform: scale(1.2) rotate(.3deg);
+}
+
+.contato .icons{
+    text-align: center;
+}
+
+.contato a{
+    color: whitesmoke;
+    font-size: 4em;
+    transition: text-shadow 1s;
+}
+
+.contato a:active,
+.contato a:hover{
+    text-decoration: none;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, .5);
+}
