@@ -1,4 +1,3 @@
-/* soft reset do css */
 *{
     margin: 0;
     padding: 0;
@@ -6,11 +5,11 @@
 }
 
 body{
- background-image: url('../img/fundo.jpg');
- background-size: auto 100vh;
- font-family: Arial;
- height: 100vh;
- font-size: 12px;
+    background-image: url("../img/fundo.jpg");
+    background-image: linear-gradient(to right,black, rgb(24, 24, 24), black);
+    font-family: Arial;
+    height: 100vh;
+    font-size: 14px;
 }
 
 /*Se a tela tiver pelo menos 400px vai carregar estes estilos*/
@@ -34,49 +33,76 @@ header{
     align-items: center;
 }
 
-a{
-    text-decoration: none;
-}
-
-a:hover{
-    text-decoration: underline;
-}
-
+/*********************   Menu  *************************/
 .menu{
-    background-color: white;
+    background-image: linear-gradient(rgb(241, 240, 240), whitesmoke, rgb(252, 250, 250));
     position: fixed;
     width: 100vw;
     top: 0;
     z-index: 1;
+    box-shadow: 10px 10px 10px black;
 }
 
 .menu a{
+    color: black;
+    font-size: 1.7em;
+    font-family: 'Roboto', sans-serif;
     display: block;
     padding: 10px 20px;
     transition: background-color 1s, color 1s;
 }
 
-.menu a:active,
-.menu a:hover{
-    background-color: teal;
-    color: white;
+@media (min-width: 300px){
+    .menu a{
+        color: black;
+        font-size: 1.3em;
+        font-family: 'Roboto', sans-serif;
+        display: block;
+        padding: 10px 20px;
+        transition: background-color 1s, color 1s;
+    }
 }
 
+@media (min-width: 600px){
+    .menu a{
+        color: black;
+        font-size: 1.7em;
+        font-family: 'Roboto', sans-serif;
+        display: block;
+        padding: 10px 20px;
+        transition: background-color 1s, color 1s;
+    }
+}
 
 .menu ul{
     display: flex;
     justify-content: space-between;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .menu li{
     list-style: none;
 }
 
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+    transition: transform 100ms;
+    transform: scale(1.3);
+}
+
+/********************  Titulo  **************************/
+
 .titulo{
     transform: scale(0.2) translateY(50vh);
     opacity: 0;
     
-    animation: .5s linear 2s animacaoTitulo forwards;
+    animation: linear 1s animacaoTitulo forwards;
 }
 
 @keyframes animacaoTitulo{
@@ -93,20 +119,64 @@ a:hover{
 .site-subtitle,
 .site-title{
     text-align: center;
-    color: whitesmoke;
+    color:whitesmoke;
 }
 
 .site-title{
-    font-size: 4em;
-    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 3.5em;
+    font-family: 'Press Start 2P', cursive;
 }
 
-
 .site-subtitle{
-    font-style: italic;
+    margin-top: 20px;
+    font-size: 1.9em;
     font-family: 'Press Start 2P', cursive;
     line-height: 1.6cm;
 }
+
+.sobre{
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width:300px){
+    .sobre{
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .sobre p{
+        font-size: 1.1em;
+    }
+}
+
+@media (min-width:400px){
+    .sobre{
+        max-width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width:600px){
+    .sobre{
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width:1200px){
+    .sobre{
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+/********************  Formatação das telas  **************************/
+/********************  Portfolio  **************************/
 
 .sobre,
 .contato,
@@ -115,47 +185,24 @@ a:hover{
     min-height: 100vh;
 }
 
-@media(min-width: 1200px){
-    .container{
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
- }
-}
-
-.sobre h2,
 .contato h2,
-.portfolio h2{
+.portfolio h2,
+.sobre h2{
+    margin-top: 35px;
     font-family: 'Press Start 2P', cursive;
     color: whitesmoke;
     margin-bottom: 1.5em;
     font-size: 2em;
-}
-
-.sobre .avatar img{
-    border-radius: 30%;
-    max-width:7000px;
-    max-height:400px;
-    width: auto;
-    height: auto;
-
-    clip-path: polygon();
-}
-
-.sobre .avatar{
-    float: right;
-    margin-left: 2em;
+    text-align: center;
 }
 
 .sobre p{
-    color: white;
+    color: whitesmoke;
     margin-bottom: 1.4em;
     text-indent: 1.4em;
     text-align: justify;
-}
-
-.sobre a{
-    color: cyan;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3em;
 }
 
 .portfolio .grid{
@@ -172,7 +219,7 @@ a:hover{
 
 @media (min-width: 880px){
     .portfolio .grid{
-        grid-template-columns: repeat(3, 240px);
+        grid-template-columns: repeat(3, 300px);
         align-content: center;
         justify-content: center;
         height: calc(100vh - 48px - 8em);
@@ -184,16 +231,42 @@ a:hover{
 }
 
 .img-portfolio{
-    height: 180px;
+    height: 200px;
     width: 100%;
     object-fit: cover;
     object-position: left bottom;
+    box-shadow: 10px 5px 5px black;
+    border-radius: 10px;
+}
+
+.card{
     transition: transform 500ms;
 }
 
-.img-portfolio:hover{
-    transform: scale(1.2) rotate(.3deg);
+.card:hover{
+    transition: transform 500ms;
+    transform: scale(1.2) rotate(.1deg);
 }
+
+@media (min-width:300px){
+    .card:hover{
+        transition: transform 500ms;
+        transform: scale(1.1) rotate(.1deg);
+    }
+}
+
+@media (min-width:600px){
+    .card:hover{
+        transition: transform 500ms;
+        transform: scale(1.2) rotate(.1deg);
+    }
+}
+
+figcaption{
+    color: whitesmoke;
+    font-family: 'Press Start 2P', cursive;
+}
+/********************  Contato  **************************/
 
 .contato .icons{
     text-align: center;
@@ -205,8 +278,14 @@ a:hover{
     transition: text-shadow 1s;
 }
 
+.contato a{
+    color: whitesmoke;
+    font-size: 4em;
+    transition: text-shadow 500ms;
+}
+
 .contato a:active,
 .contato a:hover{
     text-decoration: none;
-    text-shadow: 0px 0px 10px rgba(255, 255, 255, .5);
+    text-shadow: 0px 0px 35px whitesmoke;
 }
